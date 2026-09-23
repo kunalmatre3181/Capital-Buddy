@@ -7,9 +7,9 @@ from google.genai import types
 # API KEY
 # ======================================
 
-API_KEY = st.secrets('API')
-
-client = genai.Client(api_key=API_KEY)
+api_key = st.secrets["API"]
+ 
+client = genai.Client(api_key=api_key)
 
 # ======================================
 # SYSTEM INSTRUCTION

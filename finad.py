@@ -8,7 +8,6 @@ from google.genai import types
 # ======================================
 
 api_key = st.secrets["API"]
- 
 client = genai.Client(api_key=api_key)
 
 # ======================================

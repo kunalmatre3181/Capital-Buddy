@@ -334,10 +334,10 @@ with st.sidebar:
 # SIDEBAR
 # ======================================
 
-    st.sidebar.success("🟢 AI Online")
-        with st.sidebar:
+st.sidebar.success("🟢 AI Online")
 
-        st.title("💰 Capital Buddy")
+with st.sidebar:
+    st.title("💰 Capital Buddy")
 
     st.metric(
     "💬 Total Messages",

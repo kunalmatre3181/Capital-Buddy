@@ -69,6 +69,8 @@ background-color:#F0F9FF;
 </style>
 """, unsafe_allow_html=True)
 
+
+
 # ======================================
 # HEADER
 # ======================================
@@ -126,6 +128,24 @@ with col3:
     st.metric("🤖 Available", "24/7")
 
 
+# ======================================
+# MARKET SNAPSHOT
+# ======================================
+
+st.subheader("📈 Market Snapshot")
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.success("NIFTY 50\n\n25,420 (+0.85%)")
+
+with col2:
+    st.success("SENSEX\n\n83,100 (+0.82%)")
+
+with col3:
+    st.success("BANK NIFTY\n\n55,420 (+1.05%)")
+
+
 st.markdown("""
 <div style="
 background:#DBEAFE;
@@ -139,6 +159,38 @@ Save at least 20% of your income before planning non-essential expenses.
 </p>
 </div>
 """, unsafe_allow_html=True)
+
+from datetime import datetime
+
+now = datetime.now()
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.info(f"📅 Date: {now.strftime('%d-%m-%Y')}")
+
+with col2:
+    st.info(f"🕒 Time: {now.strftime('%I:%M %p')}")
+
+with col3:
+    st.info(f"📆 Day: {now.strftime('%A')}")
+
+
+st.subheader("📊 Financial Dashboard")
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.metric("💰 Savings Rate", "20%")
+
+with col2:
+    st.metric("📈 Inflation", "5.2%")
+
+with col3:
+    st.metric("🏦 Repo Rate", "6.50%")
+
+with col4:
+    st.metric("💵 USD/INR", "83.20")
 
 # ======================================
 # WELCOME CARD
@@ -191,6 +243,21 @@ color:#0F172A;">
 # ======================================
 # WELCOME CARD
 # ======================================
+
+finance_tips = [
+    "Save at least 20% of your income.",
+    "Track daily expenses.",
+    "Build an emergency fund.",
+    "Avoid unnecessary debt.",
+    "Review your budget monthly."
+]
+
+import random
+
+st.info(
+    "💡 Today's Finance Tip:\n\n"
+    + random.choice(finance_tips)
+)
 
 st.markdown(...)
 
@@ -267,6 +334,7 @@ with st.sidebar:
 # SIDEBAR
 # ======================================
 
+st.sidebar.success("🟢 AI Online")
     with st.sidebar:
 
         st.title("💰 Capital Buddy")
@@ -365,6 +433,23 @@ with col2:
 with col3:
     if st.button("💰 Savings"):
         st.session_state.quick_question = "How can I save money?"
+
+
+st.subheader("⚡ Quick Actions")
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.button("💰 Savings")
+
+with col2:
+    st.button("🏦 EMI")
+
+with col3:
+    st.button("📊 Budget")
+
+with col4:
+    st.button("📈 Stocks")
 
 # ======================================
 # CHAT INPUT
